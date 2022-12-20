@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "es-scratch", "src\es-scratc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "newtonsoft-playpen", "src\newtonsoft-playpen\newtonsoft-playpen.csproj", "{A92C223F-8DB2-4507-906A-82C4856D0276}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "date-descending", "src\date-descending\date-descending.csproj", "{C732C107-EEB6-4C4D-9503-7AC742967897}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,10 +34,15 @@ Global
 		{A92C223F-8DB2-4507-906A-82C4856D0276}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A92C223F-8DB2-4507-906A-82C4856D0276}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A92C223F-8DB2-4507-906A-82C4856D0276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C732C107-EEB6-4C4D-9503-7AC742967897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C732C107-EEB6-4C4D-9503-7AC742967897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C732C107-EEB6-4C4D-9503-7AC742967897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C732C107-EEB6-4C4D-9503-7AC742967897}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B734DC67-CE28-49D7-B6A7-C3D9BB3D390E} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{C98CF767-626D-44BD-BA1B-D61B3C0A3EE3} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{A92C223F-8DB2-4507-906A-82C4856D0276} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
+		{C732C107-EEB6-4C4D-9503-7AC742967897} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 	EndGlobalSection
 EndGlobal
