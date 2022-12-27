@@ -2,7 +2,7 @@
 
 Console.WriteLine("Hello, World!");
 
-var fmvs = Enumerable.Range(0, 30).Select(i => new Fmv { ValuationDate = DateTime.Today.AddDays(i) });
+var fmvs = Enumerable.Range(0, 30).Select(i => new Fmv { ValuationDate = DateTime.Today.AddDays(-i) });
 
 // foreach(var fmv in fmvs)
 //     Console.WriteLine($"{fmv.ValuationDate:s}---{fmv.Id}");
