@@ -7,4 +7,8 @@
         <RootNamespace>scim_rsk_sample</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Rsk.AspNetCore.Scim" Version="1.0.7" />
+    </ItemGroup>
+
 </Project>
