@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// Copied from https://www.scottbrady91.com/c-sharp/json-web-encryption-jwe-in-dotnet-core
 
 using System.Security.Cryptography;
 using Microsoft.IdentityModel.JsonWebTokens;
@@ -56,3 +56,4 @@ var validationResult = validateTokenHandler.ValidateToken(token, new TokenValida
 });
 
 Console.WriteLine(validationResult.IsValid);
+validationResult.Claims.ToList().ForEach(c => Console.WriteLine($"{c.Key}: {c.Value}"));
