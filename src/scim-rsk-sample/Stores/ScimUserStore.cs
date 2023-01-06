@@ -9,7 +9,7 @@ namespace scim_rsk_sample.Stores;
 public class ScimUserStore : IScimStore<User>
 {
     private readonly ILogger<ScimUserStore> _logger;
-    private readonly IScimQueryBuilderFactory queryBuilderFactory;
+    private readonly IScimQueryBuilderFactory _queryBuilderFactory;
 
     private static readonly List<QapitaUser> _users = new()
     {
@@ -25,7 +25,7 @@ public class ScimUserStore : IScimStore<User>
     public ScimUserStore(ILogger<ScimUserStore> logger, IScimQueryBuilderFactory queryBuilderFactory)
     {
         _logger = logger;
-        this.queryBuilderFactory = queryBuilderFactory;
+        _queryBuilderFactory = queryBuilderFactory;
     }
 
     public Task<IEnumerable<string>> Exists(IEnumerable<string> ids)
@@ -57,11 +57,11 @@ public class ScimUserStore : IScimStore<User>
 
         try
         {
-            var dbQuery = queryBuilderFactory.CreateQueryBuilder(_users)
+            var dbQuery = _queryBuilderFactory.CreateQueryBuilder(_users)
                 .Filter(query.Filter)
                 .Build();
 
-            var pageQuery = queryBuilderFactory.CreateQueryBuilder(dbQuery)
+            var pageQuery = _queryBuilderFactory.CreateQueryBuilder(dbQuery)
                 .Page(query.StartIndex, query.Count)
                 .Sort(query.Sort.By, query.Sort.Direction)
                 .Build();
