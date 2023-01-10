@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xabaril-health-checks", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "es-aggregate-sample", "src\es-aggregate-sample\es-aggregate-sample.csproj", "{754E8A2C-FB20-49A9-9A86-3AC04F7724DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "marten-playpen", "src\marten-playpen\marten-playpen.csproj", "{A28235E0-CCD5-439B-BB97-38F60E8E9E12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,10 @@ Global
 		{754E8A2C-FB20-49A9-9A86-3AC04F7724DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{754E8A2C-FB20-49A9-9A86-3AC04F7724DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{754E8A2C-FB20-49A9-9A86-3AC04F7724DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28235E0-CCD5-439B-BB97-38F60E8E9E12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28235E0-CCD5-439B-BB97-38F60E8E9E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28235E0-CCD5-439B-BB97-38F60E8E9E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28235E0-CCD5-439B-BB97-38F60E8E9E12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B734DC67-CE28-49D7-B6A7-C3D9BB3D390E} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
@@ -86,5 +92,6 @@ Global
 		{C3BE0E0B-6657-4583-BA53-61B677383AE5} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{7F8976D5-CC73-4BD2-9505-27D08F380B61} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{754E8A2C-FB20-49A9-9A86-3AC04F7724DB} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
+		{A28235E0-CCD5-439B-BB97-38F60E8E9E12} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 	EndGlobalSection
 EndGlobal
