@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "marten-playpen", "src\marte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client-ip-test", "src\client-ip-test\client-ip-test.csproj", "{41C623C9-7A67-4FAD-9554-B18C2B99974E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspnet-serilog-sample", "src\aspnet-serilog-sample\aspnet-serilog-sample.csproj", "{1CC0ECC6-BEF7-4ACA-9066-502EF7B8B9AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{41C623C9-7A67-4FAD-9554-B18C2B99974E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41C623C9-7A67-4FAD-9554-B18C2B99974E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41C623C9-7A67-4FAD-9554-B18C2B99974E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC0ECC6-BEF7-4ACA-9066-502EF7B8B9AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC0ECC6-BEF7-4ACA-9066-502EF7B8B9AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC0ECC6-BEF7-4ACA-9066-502EF7B8B9AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC0ECC6-BEF7-4ACA-9066-502EF7B8B9AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B734DC67-CE28-49D7-B6A7-C3D9BB3D390E} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
@@ -100,5 +106,6 @@ Global
 		{754E8A2C-FB20-49A9-9A86-3AC04F7724DB} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{A28235E0-CCD5-439B-BB97-38F60E8E9E12} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{41C623C9-7A67-4FAD-9554-B18C2B99974E} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
+		{1CC0ECC6-BEF7-4ACA-9066-502EF7B8B9AC} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 	EndGlobalSection
 EndGlobal
