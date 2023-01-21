@@ -8,6 +8,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AWS.Logger.SeriLog" Version="3.2.0" />
+        <PackageReference Include="AWSSDK.SSO" Version="3.7.100.58" />
+        <PackageReference Include="AWSSDK.SSOOIDC" Version="3.7.100.58" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.2" />
         <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />

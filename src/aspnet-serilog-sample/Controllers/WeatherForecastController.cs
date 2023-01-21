@@ -16,7 +16,7 @@ public class WeatherForecastController : ControllerBase
     public WeatherForecastController(ILogger<WeatherForecastController> logger)
     {
         _logger = logger;
-        LogMessageWithAllLevels("WeatherForecastController constructor");
+        _logger.LogWarning("Sample warning message, {Value}", Random.Shared.Next(1, 100));
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
