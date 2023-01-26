@@ -17,7 +17,7 @@ try
         {
             options.ApplicationDiscriminator = "aspnet7-docker";
         })
-        .SetDefaultKeyLifetime(TimeSpan.FromDays(15))
+        .SetDefaultKeyLifetime(TimeSpan.FromDays(15)) // This order is important, if this call is made after the Persist to SSM then it has no effect.
         .PersistKeysToAWSSystemsManager("/aspnet-ssm-playpen/data-protection-keys/");
     
     builder.Services.AddControllersWithViews();
