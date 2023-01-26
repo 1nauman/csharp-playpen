@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspnet-serilog-sample", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspnet-grpc-service", "src\aspnet-grpc-service\aspnet-grpc-service.csproj", "{D86961A3-D93E-4240-800C-2F775E7EDEE6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspnet7-docker", "src\aspnet7-docker\aspnet7-docker.csproj", "{AED5B788-D684-4D4A-BE8B-36C7D3D89C8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,10 @@ Global
 		{D86961A3-D93E-4240-800C-2F775E7EDEE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D86961A3-D93E-4240-800C-2F775E7EDEE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D86961A3-D93E-4240-800C-2F775E7EDEE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AED5B788-D684-4D4A-BE8B-36C7D3D89C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED5B788-D684-4D4A-BE8B-36C7D3D89C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED5B788-D684-4D4A-BE8B-36C7D3D89C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED5B788-D684-4D4A-BE8B-36C7D3D89C8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B734DC67-CE28-49D7-B6A7-C3D9BB3D390E} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
@@ -114,5 +120,6 @@ Global
 		{41C623C9-7A67-4FAD-9554-B18C2B99974E} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{1CC0ECC6-BEF7-4ACA-9066-502EF7B8B9AC} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{D86961A3-D93E-4240-800C-2F775E7EDEE6} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
+		{AED5B788-D684-4D4A-BE8B-36C7D3D89C8A} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 	EndGlobalSection
 EndGlobal
