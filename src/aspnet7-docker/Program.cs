@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.DataProtection;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateBootstrapLogger();
@@ -12,7 +13,13 @@ try
             .Enrich.FromLogContext());
 
 // Add services to the container.
-    builder.Services.AddDataProtection();
+    builder.Services.AddDataProtection(options =>
+        {
+            options.ApplicationDiscriminator = "aspnet7-docker";
+        })
+        .SetDefaultKeyLifetime(TimeSpan.FromDays(15))
+        .PersistKeysToAWSSystemsManager("/aspnet-ssm-playpen/data-protection-keys/");
+    
     builder.Services.AddControllersWithViews();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
