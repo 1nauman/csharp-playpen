@@ -9,9 +9,9 @@ ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
 using var package = new ExcelPackage();
 var worksheet = package.Workbook.Worksheets.Add("Test");
-var cell = worksheet.Cells["B2"];
+var cell = worksheet.Cells[2, 2];
 cell.Value = "NN";
-cell.Style.Font.Bold = true;
 cell.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+cell.Style.Font.Bold = true;
 
 package.SaveAsAsync("output.xlsx");
