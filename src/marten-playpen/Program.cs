@@ -6,7 +6,7 @@ using Marten;
 using marten_playpen;
 using Weasel.Core;
 
-var store = DocumentStore.For("host=localhost;database=idp;username=postgres;password=root");
+var store = DocumentStore.For("host=localhost;database=marten_test;username=postgres;password=root");
 
 store.Options.AutoCreateSchemaObjects = AutoCreate.All;
 
