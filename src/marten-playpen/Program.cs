@@ -19,7 +19,7 @@ store.Options.CreateDatabasesForTenants(c =>
         .ConnectionLimit(-1);
 });
 
-using (var session = store.LightweightSession())
+await using var writeSession = store.LightweightSession();
 {
     var user = new User
     {
@@ -30,16 +30,20 @@ using (var session = store.LightweightSession())
         Username = "numanr"
     };
 
-    session.Store(user);
-    session.SaveChanges();
+    var role = new Role
+    {
+        Name = "Test"
+    };
+    
+    writeSession.Store(user);
+    writeSession.Store(role);
+    writeSession.SaveChanges();
     Console.WriteLine("User saved");
 }
 
-using (var session = store.OpenSession())
+using var readSession = store.OpenSession();
+var users = readSession.Query<User>();
+foreach (var user in users)
 {
-    var users = session.Query<User>();
-    foreach (var user in users)
-    {
-        Console.WriteLine(user);
-    }
+    Console.WriteLine(user);
 }
