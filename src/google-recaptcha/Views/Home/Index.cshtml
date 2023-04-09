@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@model TestModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +9,38 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@if (!string.IsNullOrWhiteSpace(Model.Message))
+{
+    <h1>@Model.Message</h1>
+}
+<form id="frm-captcha-test" asp-action="Index" method="POST">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <input type="hidden" asp-for="ClientToken"/>
+    <button type="submit" id="submit-button">Submit</button>
+</form>
+
+@section Scripts
+{
+    <script src="https://www.google.com/recaptcha/api.js?render=@Configuration["GoogleReCaptcha:SiteKey"]"></script>
+    <script>
+        $(document).ready(function (){
+            
+            $('#submit-button').click(function (e){
+                $(this).attr('disabled', true); // disable the submit button
+                e.preventDefault(); // prevent default submit action
+                
+                grecaptcha.ready(function() {
+                  grecaptcha.execute('@Configuration["GoogleReCaptcha:SiteKey"]', {action: 'submit'}).then(function(token) {
+                    $('#ClientToken').val(token);
+                    $('#frm-captcha-test').submit();
+                    console.log('submitted form now');  
+                  });
+                });
+            });
+            
+            $('#submit-button').click();
+        });
+        
+    </script>
+}

@@ -7,4 +7,9 @@
         <RootNamespace>google_recaptcha</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Google.Cloud.RecaptchaEnterprise.V1" Version="2.4.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.4" />
+    </ItemGroup>
+
 </Project>
