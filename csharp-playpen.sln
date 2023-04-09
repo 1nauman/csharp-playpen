@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eod-historical-bulk-test", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "google-recaptcha", "src\google-recaptcha\google-recaptcha.csproj", "{6EB3F364-EED2-4DBD-A75A-4F484A19E440}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "google-recaptcha-enterprise", "src\google-recaptcha-enterprise\google-recaptcha-enterprise.csproj", "{A3F13581-C56C-4A38-8F72-DDE05EE7908C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -122,6 +124,10 @@ Global
 		{6EB3F364-EED2-4DBD-A75A-4F484A19E440}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EB3F364-EED2-4DBD-A75A-4F484A19E440}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EB3F364-EED2-4DBD-A75A-4F484A19E440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3F13581-C56C-4A38-8F72-DDE05EE7908C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3F13581-C56C-4A38-8F72-DDE05EE7908C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3F13581-C56C-4A38-8F72-DDE05EE7908C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3F13581-C56C-4A38-8F72-DDE05EE7908C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B734DC67-CE28-49D7-B6A7-C3D9BB3D390E} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
@@ -142,5 +148,6 @@ Global
 		{8D6CBA27-1280-4712-A235-2C064A6F898C} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{548831E7-C83A-4780-9A11-C7E2DACEF039} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{6EB3F364-EED2-4DBD-A75A-4F484A19E440} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
+		{A3F13581-C56C-4A38-8F72-DDE05EE7908C} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 	EndGlobalSection
 EndGlobal
