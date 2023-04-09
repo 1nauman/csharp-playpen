@@ -478,3 +478,5 @@ $RECYCLE.BIN/
 
 # remove rider crap
 .idea/
+
+**/appsettings.Development.json

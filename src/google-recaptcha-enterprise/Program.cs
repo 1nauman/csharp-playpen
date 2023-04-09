@@ -1,7 +1,14 @@
+using google_recaptcha_enterprise;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+var recaptchaConfiguration = new GoogleReCaptchaEnterpriseConfiguration();
+builder.Configuration.GetRequiredSection(GoogleReCaptchaEnterpriseConfiguration.SectionName)
+    .Bind(recaptchaConfiguration);
+builder.Services.AddSingleton<GoogleReCaptchaEnterpriseConfiguration>(recaptchaConfiguration);
 
 var app = builder.Build();
 

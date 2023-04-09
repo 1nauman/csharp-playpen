@@ -1,4 +1,6 @@
-﻿@{
+﻿@inject GoogleReCaptchaEnterpriseConfiguration ReCaptchaConfiguration
+@model IndexModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +8,49 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<form id="demo-form" asp-action="Index">
+    <input type="hidden" asp-for="@Model.ClientToken"/>
+    <button type="submit" id="submit-button">Submit</button>
+</form>
+
+@section HeaderIncludes
+{
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=@ReCaptchaConfiguration.SiteKey"></script>
+}
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function (){
+            
+            const submitButton = $('#submit-button');
+            
+            if (!submitButton) return false;
+            
+            submitButton.click(function (e){
+                e.preventDefault();
+                
+                grecaptcha.enterprise.ready(async () => {
+                    const token = await grecaptcha.enterprise.execute('@ReCaptchaConfiguration.SiteKey', {action: 'submit'});
+                    $('#ClientToken').val(token);
+                    $('#demo-form').submit();
+                  });
+            });
+            
+            submitButton.click();
+        });
+        
+        
+        // function onClick(e) {
+        //   e.preventDefault();
+        //   grecaptcha.enterprise.ready(async () => {
+        //     const token = await grecaptcha.enterprise.execute('site_key', {action: 'LOGIN'});
+        //     // IMPORTANT: The 'token' that results from execute is an encrypted response sent by
+        //     // reCAPTCHA Enterprise to the end user's browser.
+        //     // This token must be validated by creating an assessment.
+        //     // See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
+        //   });
+        // }
+    </script>
+}
