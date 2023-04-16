@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "google-recaptcha-enterprise
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspnetcoreratelimit-sample", "src\aspnetcoreratelimit-sample\aspnetcoreratelimit-sample.csproj", "{4892872C-B4CE-4AE4-B32B-C650D07C9B29}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mongo-scratch", "src\mongo-scratch\mongo-scratch.csproj", "{42AF3822-8120-49DC-A269-91A4814A919D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -134,6 +136,10 @@ Global
 		{4892872C-B4CE-4AE4-B32B-C650D07C9B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4892872C-B4CE-4AE4-B32B-C650D07C9B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4892872C-B4CE-4AE4-B32B-C650D07C9B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42AF3822-8120-49DC-A269-91A4814A919D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42AF3822-8120-49DC-A269-91A4814A919D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42AF3822-8120-49DC-A269-91A4814A919D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42AF3822-8120-49DC-A269-91A4814A919D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B734DC67-CE28-49D7-B6A7-C3D9BB3D390E} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
@@ -156,5 +162,6 @@ Global
 		{6EB3F364-EED2-4DBD-A75A-4F484A19E440} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{A3F13581-C56C-4A38-8F72-DDE05EE7908C} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{4892872C-B4CE-4AE4-B32B-C650D07C9B29} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
+		{42AF3822-8120-49DC-A269-91A4814A919D} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 	EndGlobalSection
 EndGlobal
