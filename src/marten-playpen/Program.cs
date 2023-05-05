@@ -8,6 +8,8 @@ using Weasel.Core;
 
 var store = DocumentStore.For("host=localhost;database=marten_test;username=postgres;password=root");
 
+store.Options.Policies.AllDocumentsAreMultiTenanted();
+
 store.Options.AutoCreateSchemaObjects = AutoCreate.All;
 
 store.Options.CreateDatabasesForTenants(c =>
@@ -19,29 +21,33 @@ store.Options.CreateDatabasesForTenants(c =>
         .ConnectionLimit(-1);
 });
 
-await using var writeSession = store.LightweightSession();
-{
-    var user = new User
-    {
-        Id = Guid.NewGuid(),
-        FirstName = "Numan",
-        LastName = "Mohammed",
-        Email = "numan@qapita.com",
-        Username = "numanr"
-    };
+long clientId = 1080L;
 
-    var role = new Role
-    {
-        Name = "Test"
-    };
-    
-    writeSession.Store(user);
-    writeSession.Store(role);
-    writeSession.SaveChanges();
-    Console.WriteLine("User saved");
-}
+// await using var writeSession = store.LightweightSession(clientId.ToString());
+// {
+//     var user = new User
+//     {
+//         Id = Guid.NewGuid(),
+//         FirstName = "Numan",
+//         LastName = $"Mohammed {clientId}",
+//         Email = "numan@qapita.com",
+//         Username = "numanr",
+//         ClientId = clientId
+//     };
+//
+//     var role = new Role
+//     {
+//         Name = "Test",
+//         ClientId = clientId
+//     };
+//     
+//     writeSession.Store(user);
+//     writeSession.Store(role);
+//     writeSession.SaveChanges();
+//     Console.WriteLine("User saved");
+// }
 
-using var readSession = store.OpenSession();
+using var readSession = store.OpenSession(clientId.ToString());
 var users = readSession.Query<User>();
 foreach (var user in users)
 {

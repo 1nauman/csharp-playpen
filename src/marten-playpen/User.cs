@@ -1,6 +1,11 @@
 namespace marten_playpen;
 
-public class User
+public interface IClientAware
+{
+    long ClientId { get; }
+}
+
+public class User : IClientAware
 {
     public Guid Id { get; set; }
     public string FirstName { get; set; }
@@ -12,4 +17,6 @@ public class User
     {
         return $"Id={Id:D}, FirstName={FirstName}, LastName={LastName}, Email={Email}, Username={Username}";
     }
+
+    public long ClientId { get; set; }
 }
