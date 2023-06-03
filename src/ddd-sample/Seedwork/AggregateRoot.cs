@@ -5,7 +5,7 @@ public abstract class AggregateRoot
     private readonly Dictionary<Type, Action<object>> _handlers = new();
     private readonly List<object> _changes = new();
     
-    public Guid Id { get; set; } = default;
+    public abstract Guid Id { get; set; }
     
     protected abstract AggregateState State { get; }
     

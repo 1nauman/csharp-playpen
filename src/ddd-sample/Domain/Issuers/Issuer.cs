@@ -4,6 +4,12 @@ namespace DDD.Sample.Domain.Issuers;
 
 public class Issuer : AggregateRoot<IssuerState>
 {
+    public override Guid Id
+    {
+        get => State.Id;
+        set => State.Id = value;
+    }
+    
     public string LegalName => State.LegalName;
 
     public string BrandName => State.BrandName;
@@ -11,6 +17,8 @@ public class Issuer : AggregateRoot<IssuerState>
     public string CountryOfIncorporation => State.CountryOfIncorporation;
 
     public DateTime? DateOfIncorporation => State.DateOfIncorporation;
+
+    public IssuerStatus Status => State.Status;
 
 
     public Issuer()
@@ -44,6 +52,7 @@ public class Issuer : AggregateRoot<IssuerState>
         State.LegalName = evt.LegalName;
         State.CountryOfIncorporation = evt.CountryOfIncorporation;
         State.DateOfIncorporation = evt.DateOfIncorporation;
+        State.Status = IssuerStatus.Active;
     }
     
     private void When(IssuerStatusChanged evt)
