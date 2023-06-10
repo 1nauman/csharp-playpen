@@ -28,3 +28,27 @@ foreach (var group in groupByBirthDateThenByJoiningDate)
         WriteLine(employee);
     }
 }
+
+/*
+ 
+ Sample output:
+ 
+Group: 1990-06-01 2010-06-01
+1, John Doe, 1990-06-01, 2010-06-01
+6, Michael Wilson, 1990-06-01, 2010-06-01
+Group: 1992-07-02 2012-07-02
+2, Jane Smith, 1992-07-02, 2012-07-02
+7, Linda Jones, 1992-07-02, 2012-07-02
+Group: 1989-05-03 2009-05-03
+3, Robert Johnson, 1989-05-03, 2009-05-03
+8, William Thomas, 1989-05-03, 2009-05-03
+Group: 1991-08-04 2011-08-04
+4, James Brown, 1991-08-04, 2011-08-04
+9, Elizabeth Taylor, 1991-08-04, 2011-08-04
+Group: 1993-09-05 2013-09-05
+5, Patricia Davis, 1993-09-05, 2013-09-05
+10, David Moore, 1993-09-05, 2013-09-05
+Group: 1965-12-31 1981-05-07
+11, Sanjay Dutt, 1965-12-31, 1981-05-07
+
+*/
