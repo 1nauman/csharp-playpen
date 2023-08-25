@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <RootNamespace>aws_ses_emailer</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ardalis.GuardClauses" Version="4.1.1" />
+      <PackageReference Include="AWSSDK.SimpleEmailV2" Version="3.7.200.24" />
+      <PackageReference Include="AWSSDK.SSO" Version="3.7.200.24" />
+      <PackageReference Include="AWSSDK.SSOOIDC" Version="3.7.200.24" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
+      <PackageReference Include="MimeKit" Version="4.1.0" />
+    </ItemGroup>
+
+</Project>
