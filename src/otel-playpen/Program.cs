@@ -1,4 +1,28 @@
+using OpenTelemetry.Logs;
+using OpenTelemetry.Resources;
+using otel_playpen.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Build a resource configuration action to set service information.
+Action<ResourceBuilder> configureResource = r => r.AddService(
+    serviceName: "otel-playpen",
+    serviceVersion: "1.0",
+    serviceNamespace: "otel.playpen",
+    serviceInstanceId: Environment.MachineName);
+
+// Add OTel
+builder.Services.AddOTel(configureResource);
+
+builder.Logging.ClearProviders();
+builder.Logging.AddOpenTelemetry(options =>
+{
+    var resBuilder = ResourceBuilder.CreateDefault();
+    configureResource(resBuilder);
+    options.SetResourceBuilder(resBuilder);
+    
+    options.AddConsoleExporter();
+});
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
