@@ -1,0 +1,4 @@
+GET {{otel_playpen_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
