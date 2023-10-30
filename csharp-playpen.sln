@@ -68,6 +68,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "otel-playpen", "src\otel-pl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp-optional-monad", "src\csharp-optional-monad\csharp-optional-monad.csproj", "{B1D788D5-BFA3-4B97-88AF-251F069ADCEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mongo-v3-linq-provider", "src\mongo-v3-linq-provider\mongo-v3-linq-provider.csproj", "{DBA715C3-3E39-48CC-9B38-9C868557483F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -193,6 +195,10 @@ Global
 		{B1D788D5-BFA3-4B97-88AF-251F069ADCEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1D788D5-BFA3-4B97-88AF-251F069ADCEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1D788D5-BFA3-4B97-88AF-251F069ADCEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBA715C3-3E39-48CC-9B38-9C868557483F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBA715C3-3E39-48CC-9B38-9C868557483F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBA715C3-3E39-48CC-9B38-9C868557483F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBA715C3-3E39-48CC-9B38-9C868557483F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B734DC67-CE28-49D7-B6A7-C3D9BB3D390E} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
@@ -224,5 +230,6 @@ Global
 		{172461AF-7D03-4BEB-96F9-D9BB03E3D7FC} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{23BCD33F-B321-40B0-8176-F91CCAD2B266} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{B1D788D5-BFA3-4B97-88AF-251F069ADCEB} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
+		{DBA715C3-3E39-48CC-9B38-9C868557483F} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 	EndGlobalSection
 EndGlobal
