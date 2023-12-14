@@ -15,8 +15,11 @@ public class User : IClientAware
 
     public override string ToString()
     {
-        return $"Id={Id:D}, FirstName={FirstName}, LastName={LastName}, Email={Email}, Username={Username}";
+        return
+            $"Id={Id:D}, FirstName={FirstName}, LastName={LastName}, Email={Email}, Username={Username}, ClientId={ClientId}, Status={Status}";
     }
 
     public long ClientId { get; set; }
+
+    public Status Status { get; set; } = Status.Inactive;
 }

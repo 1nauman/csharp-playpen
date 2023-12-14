@@ -1,16 +1,31 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-//Console.WriteLine("Hello, World!");
-
 using Marten;
 using marten_playpen;
+using Marten.Services;
+using Marten.Services.Json;
+using Newtonsoft.Json;
 using Weasel.Core;
 
-var store = DocumentStore.For("host=localhost;database=marten_test;username=postgres;password=root");
+var martenSerializer = new JsonNetSerializer();
+martenSerializer.Customize(serializer =>
+{
+    serializer.Converters.Add(new NewtonsoftEnumerationValueSerializer());
+    serializer.TypeNameHandling = TypeNameHandling.Auto;
+    serializer.DateTimeZoneHandling = DateTimeZoneHandling.RoundtripKind;
+    serializer.MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead;
+    serializer.ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor;
+    serializer.ContractResolver = new JsonNetContractResolver();
+});
 
-store.Options.Policies.AllDocumentsAreMultiTenanted();
-
-store.Options.AutoCreateSchemaObjects = AutoCreate.All;
+var store = DocumentStore.For(storeOptions =>
+{
+    storeOptions.Connection("host=localhost;database=marten_test;username=postgres;password=postgres");
+    storeOptions.Serializer(martenSerializer);
+    storeOptions.AutoCreateSchemaObjects = AutoCreate.All;
+    storeOptions.Policies.AllDocumentsAreMultiTenanted();
+    storeOptions.Linq.FieldSources.Add(new CustomStringFieldSource());
+});
 
 store.Options.CreateDatabasesForTenants(c =>
 {
@@ -24,32 +39,30 @@ store.Options.CreateDatabasesForTenants(c =>
 long clientId = 1080L;
 
 // await using var writeSession = store.LightweightSession(clientId.ToString());
+// var user = new User
 // {
-//     var user = new User
-//     {
-//         Id = Guid.NewGuid(),
-//         FirstName = "Numan",
-//         LastName = $"Mohammed {clientId}",
-//         Email = "numan@qapita.com",
-//         Username = "numanr",
-//         ClientId = clientId
-//     };
+//     Id = Guid.NewGuid(),
+//     FirstName = "Numan",
+//     LastName = $"Mohammed {clientId}",
+//     Email = "someone@test.com",
+//     Username = "numanr",
+//     ClientId = clientId,
+// };
 //
-//     var role = new Role
-//     {
-//         Name = "Test",
-//         ClientId = clientId
-//     };
-//     
-//     writeSession.Store(user);
-//     writeSession.Store(role);
-//     writeSession.SaveChanges();
-//     Console.WriteLine("User saved");
-// }
+// var role = new Role
+// {
+//     Name = "Test",
+//     ClientId = clientId
+// };
+//
+// writeSession.Store(user);
+// writeSession.Store(role);
+// writeSession.SaveChanges();
+// Console.WriteLine("User saved");
 
 using var readSession = store.OpenSession(clientId.ToString());
-var users = readSession.Query<User>();
-foreach (var user in users)
+var users = readSession.Query<User>().Where(o => o.Status == Status.Inactive);
+foreach (var u in users)
 {
-    Console.WriteLine(user);
+    Console.WriteLine(u);
 }
