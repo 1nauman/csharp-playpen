@@ -8,22 +8,31 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using console_scratch;
 
-var p1 = new Person
-{
-    Name = "John Doe",
-    Age = 42,
-    Gender = "M"
-};
+var now = DateTime.UtcNow;
+var anHourAgo = now.AddHours(-1);
+var timeWindow = TimeSpan.FromMinutes(60.0);
 
-PrintPerson(p1);
+var diff = now - anHourAgo;
+Console.WriteLine(diff);
+Console.WriteLine(timeWindow);
+Console.WriteLine(diff >= timeWindow);
 
-void PrintPerson(in Person person)
-{
-    person.Name = "Jane Doe";
-    Console.WriteLine($"Name: {person.Name}");
-    Console.WriteLine($"Age: {person.Age}");
-    Console.WriteLine($"Gender: {person.Gender}");
-}
+// var p1 = new Person
+// {
+//     Name = "John Doe",
+//     Age = 42,
+//     Gender = "M"
+// };
+//
+// PrintPerson(p1);
+//
+// void PrintPerson(in Person person)
+// {
+//     person.Name = "Jane Doe";
+//     Console.WriteLine($"Name: {person.Name}");
+//     Console.WriteLine($"Age: {person.Age}");
+//     Console.WriteLine($"Gender: {person.Gender}");
+// }
 
 //"Test".Sha512();
 
