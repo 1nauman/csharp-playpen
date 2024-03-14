@@ -8,14 +8,38 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using console_scratch;
 
-var now = DateTime.UtcNow;
-var anHourAgo = now.AddHours(-1);
-var timeWindow = TimeSpan.FromMinutes(60.0);
+var p = new Person("null", 200);
 
-var diff = now - anHourAgo;
-Console.WriteLine(diff);
-Console.WriteLine(timeWindow);
-Console.WriteLine(diff >= timeWindow);
+var q = p with { Name = "empty" };
+
+Console.WriteLine(p);
+Console.WriteLine(q);
+
+public record Person(string Name, int Age)
+{
+    private readonly string _name = Name;
+    
+    public string Name
+    {
+        get => _name;
+        init
+        {
+            ArgumentException.ThrowIfNullOrWhiteSpace(value); 
+            _name = value;
+        }
+    }
+
+    public int Age { get; } = Age <= 0 ? throw new ArgumentOutOfRangeException(nameof(Age)) : Age;
+}
+
+// var now = DateTime.UtcNow;
+// var anHourAgo = now.AddHours(-1);
+// var timeWindow = TimeSpan.FromMinutes(60.0);
+//
+// var diff = now - anHourAgo;
+// Console.WriteLine(diff);
+// Console.WriteLine(timeWindow);
+// Console.WriteLine(diff >= timeWindow);
 
 // var p1 = new Person
 // {
