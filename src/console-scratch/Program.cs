@@ -8,29 +8,51 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using console_scratch;
 
-var p = new Person("null", 200);
-
-var q = p with { Name = "empty" };
-
-Console.WriteLine(p);
-Console.WriteLine(q);
-
-public record Person(string Name, int Age)
+var first = new StockPrice[]
 {
-    private readonly string _name = Name;
-    
-    public string Name
-    {
-        get => _name;
-        init
-        {
-            ArgumentException.ThrowIfNullOrWhiteSpace(value); 
-            _name = value;
-        }
-    }
+    new(DateOnly.Parse("2021-01-01"), 100),
+    new(DateOnly.Parse("2021-01-02"), 110),
+};
 
-    public int Age { get; } = Age <= 0 ? throw new ArgumentOutOfRangeException(nameof(Age)) : Age;
+// create second array
+var second = new StockPrice[]
+{
+    new(DateOnly.Parse("2021-01-02"), 500),
+    new(DateOnly.Parse("2021-01-03"), 110),
+};
+
+var union = first.UnionBy(second, o => o.Date);
+
+// print list to console
+foreach (var item in union)
+{
+    Console.WriteLine(item);
 }
+
+
+// var p = new Person("null", 200);
+//
+// var q = p with { Name = "empty" };
+//
+// Console.WriteLine(p);
+// Console.WriteLine(q);
+//
+// public record Person(string Name, int Age)
+// {
+//     private readonly string _name = Name;
+//     
+//     public string Name
+//     {
+//         get => _name;
+//         init
+//         {
+//             ArgumentException.ThrowIfNullOrWhiteSpace(value); 
+//             _name = value;
+//         }
+//     }
+//
+//     public int Age { get; } = Age <= 0 ? throw new ArgumentOutOfRangeException(nameof(Age)) : Age;
+// }
 
 // var now = DateTime.UtcNow;
 // var anHourAgo = now.AddHours(-1);
