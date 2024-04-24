@@ -11,14 +11,14 @@ using console_scratch;
 var first = new StockPrice[]
 {
     new(DateOnly.Parse("2021-01-01"), 100),
-    new(DateOnly.Parse("2021-01-02"), 110),
+    new(DateOnly.Parse("2021-01-03"), 110),
 };
 
 // create second array
 var second = new StockPrice[]
 {
-    new(DateOnly.Parse("2021-01-02"), 500),
-    new(DateOnly.Parse("2021-01-03"), 110),
+    new(DateOnly.Parse("2021-01-01"), 500),
+    new(DateOnly.Parse("2021-01-02"), 110),
 };
 
 var union = first.UnionBy(second, o => o.Date);
