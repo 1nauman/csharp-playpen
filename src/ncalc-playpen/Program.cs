@@ -2,23 +2,37 @@
 
 using NCalc;
 
-var settlementAmountExpr = new Expression("Round([SettlementPrice] * [Units], 2)")
+// var settlementAmountExpr = new Expression("Round([SettlementPrice] * [Units], 2)")
+// {
+//     Parameters =
+//     {
+//         ["SettlementPrice"] = new Expression("[FMV]"),
+//         ["Units"] = 10
+//     }
+// };
+//
+// settlementAmountExpr.EvaluateParameter += (name, args) =>
+// {
+//     if (name == "FMV")
+//     {
+//         args.Result = 123.45d;
+//     }
+// };
+//
+// var settlementAmount = settlementAmountExpr.Evaluate();
+//
+// Console.WriteLine("Settlement Amount: {0}", settlementAmount);
+
+const string formula = "(FairMarketValue - ExercisePrice) * NumberOfUnits";
+var e = new Expression(formula)
 {
     Parameters =
     {
-        ["SettlementPrice"] = new Expression("[FMV]"),
-        ["Units"] = 10
+        ["FairMarketValue"] = 100.0,
+        ["ExercisePrice"] = 10.0,
+        ["NumberOfUnits"] = 10
     }
 };
+var result = (double)e.Evaluate();
 
-settlementAmountExpr.EvaluateParameter += (name, args) =>
-{
-    if (name == "FMV")
-    {
-        args.Result = 123.45d;
-    }
-};
-
-var settlementAmount = settlementAmountExpr.Evaluate();
-
-Console.WriteLine("Settlement Amount: {0}", settlementAmount);
+Console.WriteLine("Perquisite Value: {0}", result);
