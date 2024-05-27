@@ -53,6 +53,10 @@ public class TaxComponent
     public TaxApplicationType ApplicationType { get; set; }
 
     public decimal? Rate { get; set; }
+    
+    public decimal ActiveTaxRate { get; set; }
+    
+    public decimal SeparatedTaxRate { get; set; }
 
     public List<TaxSlab>? Slabs { get; set; }
 

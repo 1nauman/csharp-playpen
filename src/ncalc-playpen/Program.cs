@@ -23,14 +23,15 @@ using NCalc;
 //
 // Console.WriteLine("Settlement Amount: {0}", settlementAmount);
 
-const string formula = "(FairMarketValue - ExercisePrice) * NumberOfUnits";
+const string formula = "Round((FairMarketValue - ExercisePrice) * NumberOfUnits, PerquisiteValuePrecision)";
 var e = new Expression(formula)
 {
     Parameters =
     {
         ["FairMarketValue"] = 100.0,
-        ["ExercisePrice"] = 10.0,
-        ["NumberOfUnits"] = 10
+        ["ExercisePrice"] = 10.785,
+        ["NumberOfUnits"] = 10,
+        ["PerquisiteValuePrecision"] = 2
     }
 };
 var result = (double)e.Evaluate();
