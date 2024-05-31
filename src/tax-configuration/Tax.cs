@@ -79,10 +79,7 @@ public class TaxRate
     public List<TaxSlab>? Progressive { get; set; }
 }
 
-public record Percent
-{
-    public decimal Value { get; init; }
-}
+public record Percent(decimal Value = 0m);
 
 public class StakeholderTaxRecord
 {
@@ -150,7 +147,7 @@ public class TaxSlab
 
     public decimal? UpperLimit { get; set; }
 
-    public decimal Rate { get; set; }
+    public Percent Rate { get; set; }
 }
 
 public enum TaxBasis
