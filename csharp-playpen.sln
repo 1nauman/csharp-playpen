@@ -80,6 +80,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tax-model", "src\tax-model\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tax-configuration", "src\tax-configuration\tax-configuration.csproj", "{9E8AD8ED-278A-4781-AD64-150E78206620}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "audit.net-mongo-client", "src\audit.net-mongo-client\audit.net-mongo-client.csproj", "{671D9545-5331-4331-9D79-7BAC86610C58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -229,6 +231,10 @@ Global
 		{9E8AD8ED-278A-4781-AD64-150E78206620}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E8AD8ED-278A-4781-AD64-150E78206620}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E8AD8ED-278A-4781-AD64-150E78206620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{671D9545-5331-4331-9D79-7BAC86610C58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671D9545-5331-4331-9D79-7BAC86610C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671D9545-5331-4331-9D79-7BAC86610C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671D9545-5331-4331-9D79-7BAC86610C58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B734DC67-CE28-49D7-B6A7-C3D9BB3D390E} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
@@ -266,5 +272,6 @@ Global
 		{75530DC3-7561-4E36-ABA8-2D16549FE528} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{3AB73426-C571-4985-8299-EFD7072F6AA5} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 		{9E8AD8ED-278A-4781-AD64-150E78206620} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
+		{671D9545-5331-4331-9D79-7BAC86610C58} = {04A29546-1300-49CA-9BC7-567A8248F7FD}
 	EndGlobalSection
 EndGlobal
