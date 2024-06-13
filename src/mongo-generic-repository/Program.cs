@@ -5,6 +5,10 @@ using mongo_generic_repository.Application.Models;
 using mongo_generic_repository.Infrastructure;
 using mongo_generic_repository.Infrastructure.Persistence.Models;
 using mongo_generic_repository.Seedwork;
+using MongoDB.Bson.Serialization.Conventions;
+
+ConventionRegistry.Register("CamelCaseConvention",
+    new ConventionPack { new CamelCaseElementNameConvention() }, _ => true);
 
 var services = new ServiceCollection();
 
