@@ -12,6 +12,8 @@ ConventionRegistry.Register("CamelCaseConvention",
 
 var services = new ServiceCollection();
 
+services.AddSingleton<IEncryptionService, EncryptionService>();
+
 //Register your repository
 services.AddTransient<IRepository<EmployeePayrollRecordStoreEntity, long>>(
     sp => new MongoRepository<EmployeePayrollRecordStoreEntity, long>(
@@ -46,5 +48,5 @@ var records = await adapter.GetAllAsync();
 
 foreach (var record in records)
 {
-    Console.WriteLine($"Employee ID: {record.EmployeeId}, Basic Salary: {record.BasicSalary}");
+    Console.WriteLine($"Id: {record.Id}, Employee ID: {record.EmployeeId}, Basic Salary: {record.BasicSalary}");
 }
