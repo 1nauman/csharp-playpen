@@ -16,7 +16,7 @@ public class RepositoryAdapter<TEntity, TStoreEntity, TId> : IRepository<TEntity
     {
         ArgumentNullException.ThrowIfNull(storeRepository);
         ArgumentNullException.ThrowIfNull(mapper);
-        
+
         _storeRepository = storeRepository;
         _mapper = mapper;
     }

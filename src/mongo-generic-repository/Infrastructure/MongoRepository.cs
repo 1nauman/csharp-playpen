@@ -9,6 +9,10 @@ public class MongoRepository<TEntity, TId> : IRepository<TEntity, TId> where TEn
 
     public MongoRepository(string connectionString, string databaseName, string collectionName)
     {
+        ArgumentException.ThrowIfNullOrWhiteSpace(connectionString);
+        ArgumentException.ThrowIfNullOrWhiteSpace(databaseName);
+        ArgumentException.ThrowIfNullOrWhiteSpace(collectionName);
+        
         var client = new MongoClient(connectionString);
         var database = client.GetDatabase(databaseName);
         _collection = database.GetCollection<TEntity>(collectionName);

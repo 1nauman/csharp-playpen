@@ -41,7 +41,7 @@ public class EmployeePayrollRecordMapper : IEntityMapper<EmployeePayrollRecord, 
         aesAlg.IV = _encryptionKey; // For demonstration purposes only. Use a secure IV in production.
 
         // Serialize the value to JSON (or any suitable format)
-        var serializedValue = JsonConvert.SerializeObject(value); 
+        var serializedValue = JsonConvert.SerializeObject(value);
         var plainTextBytes = Encoding.UTF8.GetBytes(serializedValue);
 
         var encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
@@ -50,6 +50,7 @@ public class EmployeePayrollRecordMapper : IEntityMapper<EmployeePayrollRecord, 
         {
             csEncrypt.Write(plainTextBytes, 0, plainTextBytes.Length);
         }
+
         return Convert.ToBase64String(msEncrypt.ToArray());
     }
 

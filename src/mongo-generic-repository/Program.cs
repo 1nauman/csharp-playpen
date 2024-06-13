@@ -1,23 +1,30 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-//Console.WriteLine("Hello, World!");
-
+using Microsoft.Extensions.DependencyInjection;
 using mongo_generic_repository.Application.Models;
 using mongo_generic_repository.Infrastructure;
 using mongo_generic_repository.Infrastructure.Persistence.Models;
+using mongo_generic_repository.Seedwork;
 
-//var services = new ServiceCollection();
+var services = new ServiceCollection();
 
-// Register your repository
-// services.AddScoped<IRepository<EmployeePayrollRecord, long>>(
-//     sp => new MongoRepository<EmployeePayrollRecord, long>(
-//         "mongodb://localhost:27017",
-//         "payroll",
-//         "employee-payroll-records"
-//     )
-// );
-//
-// var provider = services.BuildServiceProvider();
+//Register your repository
+services.AddTransient<IRepository<EmployeePayrollRecordStoreEntity, long>>(
+    sp => new MongoRepository<EmployeePayrollRecordStoreEntity, long>(
+        "mongodb://localhost:27017",
+        "payroll",
+        "employee-payroll-records"
+    )
+);
+
+services
+    .AddTransient<IEntityMapper<EmployeePayrollRecord, EmployeePayrollRecordStoreEntity, long>,
+        EmployeePayrollRecordMapper>();
+services
+    .AddTransient<IRepository<EmployeePayrollRecord, long>,
+        RepositoryAdapter<EmployeePayrollRecord, EmployeePayrollRecordStoreEntity, long>>();
+
+var provider = services.BuildServiceProvider();
 
 // Actual storage
 var payrollRecord = new EmployeePayrollRecord
@@ -27,14 +34,7 @@ var payrollRecord = new EmployeePayrollRecord
     BasicSalary = 50000m
 };
 
-var repo = new MongoRepository<EmployeePayrollRecordStoreEntity, long>(
-    "mongodb://localhost:27017",
-    "payroll",
-    "employee-payroll-records"
-);
-
-var mapper = new EmployeePayrollRecordMapper();
-var adapter = new RepositoryAdapter<EmployeePayrollRecord, EmployeePayrollRecordStoreEntity, long>(repo, mapper);
+var adapter = provider.GetRequiredService<IRepository<EmployeePayrollRecord, long>>();
 
 await adapter.CreateAsync(payrollRecord);
 
